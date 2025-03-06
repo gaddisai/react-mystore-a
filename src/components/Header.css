@@ -1,0 +1,11 @@
+.App_Header_Row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    background-color: #afc4c7;
+    /* border-bottom: 1px solid #e9ecef; */
+}
+.App_Footer_Row{
+    
+}

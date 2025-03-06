@@ -1,11 +1,17 @@
 //we can use <div></div> or <></> to wrap the content
 import './App.css';
+import { Products } from './components/Products';
+import { Header } from './components/Header';
+import { Footer } from './components/Footer';
 
-function App(value) {
+function App() {
   return (
-    <>
-      <h1>Hello {value.name}! My age is {value.age}</h1>
-    </>
+    <div>
+      <Header/>
+      <Products/>
+      <hr/>
+      <Footer/>
+    </div>
   );
 }
 
