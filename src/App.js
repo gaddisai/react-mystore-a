@@ -1,25 +1,12 @@
-import logo from './logo.svg';
+//we can use <div></div> or <></> to wrap the content
 import './App.css';
 
-function App() {
+function App(value) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>Hello {value.name}! My age is {value.age}</h1>
+    </>
   );
 }
 
-export default App;
+export{App};
