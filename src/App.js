@@ -1,7 +1,8 @@
 //we can use <div></div> or <></> to wrap the content
 import './App.css';
+import { Login } from './components/Login';
 import { Products } from './components/Products';
-import { Header } from './components/Header';
+import {Header} from './components/Header';
 import { Footer } from './components/Footer';
 import { BrowserRouter,Route,Routes } from 'react-router-dom'; 
 export{App};

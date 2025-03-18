@@ -6,6 +6,18 @@
     background-color: #afc4c7;
     /* border-bottom: 1px solid #e9ecef; */
 }
-.App_Footer_Row{
-    
+.App_Header_Right{
+    display: flex;
+    padding: 5px 10px;
+    list-style: none;
+}
+.headerBox{
+    padding: 10px;
+    margin: 5px;
+    background-color: black;
+    border-radius: 5px;
+}
+.headerColor{
+    color: white;
+    text-decoration: none;
 }
