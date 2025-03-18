@@ -3,14 +3,22 @@ import './App.css';
 import { Products } from './components/Products';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
+import { BrowserRouter,Route,Routes } from 'react-router-dom'; 
 
 function App() {
   return (
     <div>
-      <Header/>
-      <Products/>
-      <hr/>
-      <Footer/>
+      <BrowserRouter>
+        <Header/>
+        {/* <Products/>
+        <hr/>
+        <Footer/> */}
+        <Routes>
+          <Route index element={<Products/>}/>
+          <Route path="/products" element={<Products/>}/>
+          <Route path="/login" element={<Login/>}/>  
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
