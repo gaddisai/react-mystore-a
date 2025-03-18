@@ -1,4 +1,5 @@
 //ReactDOM::: react document object model
+//npm:: node package manager
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
