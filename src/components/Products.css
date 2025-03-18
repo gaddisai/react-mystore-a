@@ -1,0 +1,18 @@
+.App_Products_Container{
+    padding: 5px;
+}
+.App_Products_Row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    margin: 5px;
+    flex-wrap: wrap;
+}
+.App_Products_Box{
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #e9ecef;
+    margin: 5px;
+    width: 350px;
+}
