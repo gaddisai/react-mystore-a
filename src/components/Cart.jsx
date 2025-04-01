@@ -4,25 +4,39 @@ import { appContext } from '../App'
 
 function Cart() {
   const { cart, products,setCart } = useContext(appContext);
+  const increment = (key) => {
+    setCart({...cart,[key]:cart[key]+1});
+  }
+  const decrement = (key) => {
+    if(cart[key] > 1){
+      setCart({...cart,[key]:cart[key]-1});
+    }else{
+      delete cart[key];
+      setCart({...cart});
+    }
+  }
   return (
     <>
     <div>
       <h2>Cart</h2>
-      <div className='App_Products_Row'>
-        {
-          Object.keys(cart).length === 0 ?
-          <h3>Cart is empty</h3>:
-          Object.keys(cart).map((value,index)=>(
-            <div key={index} className="App_Products_Box">
-              <h3>{products[value-1].name}</h3>
-              <br />
-              <p>Price: {products[value-1].price}</p>
-              <button onClick={()=>setCart({...cart,[value]:undefined})}>Remove from Cart</button>
-            </div>
-          ))
+      <div >
+        { 
+          Object.keys(cart).length === 0 ? (
+            <h3>Cart is empty</h3>
+          ) : (
+            Object.keys(cart).map((key) => {
+              const product = products.find((product) => product.id === parseInt(key));
+              return (
+                <div key={key}>
+                  <h3>{product.id}-{product.name}-{product.price} <button onClick={()=>decrement(key)}>-</button>{cart[key]}<button onClick={()=>increment(key)}>+</button></h3>
+                </div>
+              );
+            })
+          )
         }
       </div>
     </div>
     </>
   )
 }
+export { Cart };

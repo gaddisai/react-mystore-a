@@ -6,6 +6,7 @@ import { Footer } from './components/Footer';
 import { Register } from './components/Register';
 import { BrowserRouter,Route,Routes } from 'react-router-dom'; 
 import { createContext,useState } from "react";
+import { Cart } from './components/Cart';
 const appContext = createContext();
 export {appContext}
 function App() {
@@ -31,6 +32,7 @@ function App() {
           <Route path="/products" element={<Products/>}/> 
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />}/>
+          <Route path="/cart" element={<Cart/>}/>
         </Routes>
         <Footer/>
       </appContext.Provider>
