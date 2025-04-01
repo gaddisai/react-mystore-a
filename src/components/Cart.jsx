@@ -1,7 +1,7 @@
 import React from 'react'
 import { useContext } from 'react'
 import { appContext } from '../App'
-
+import './Cart.css'
 function Cart() {
   const { cart, products,setCart } = useContext(appContext);
   const increment = (key) => {
@@ -19,7 +19,7 @@ function Cart() {
     <>
     <div>
       <h2>Cart</h2>
-      <div >
+      <div className='cartContent' >
         { 
           Object.keys(cart).length === 0 ? (
             <h3>Cart is empty</h3>
