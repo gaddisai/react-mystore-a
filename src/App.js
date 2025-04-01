@@ -1,4 +1,3 @@
-//we can use <div></div> or <></> to wrap the content
 import './App.css';
 import { Login } from './components/Login';
 import { Products } from './components/Products';
