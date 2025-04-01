@@ -15,6 +15,10 @@ function Cart() {
       setCart({...cart});
     }
   }
+  const handleDelete = (key) => {
+    delete cart[key];
+    setCart({...cart});
+  }
   return (
     <>
     <div>
@@ -28,7 +32,12 @@ function Cart() {
               const product = products.find((product) => product.id === parseInt(key));
               return (
                 <div key={key}>
-                  <h3>{product.id}-{product.name}-{product.price} <button onClick={()=>decrement(key)}>-</button>{cart[key]}<button onClick={()=>increment(key)}>+</button></h3>
+                  <h3>ID: {product.id} 
+                    NAME:{product.name}
+                    PRICE: {product.price} <button onClick={()=>decrement(key)}>-</button>{cart[key]}<button onClick={()=>increment(key)}>+</button>
+                    QUANTITY_PRICE:{cart[key]*product.price}
+                    <button onClick={()=>{handleDelete(key)}}>Remove</button>  
+                  </h3>
                 </div>
               );
             })
