@@ -11,7 +11,7 @@ function Products() {
             <h2>Welcome {user.name}</h2>
             <div className="App_Products_Row">
                 {
-                    products.map((value, index) => (
+                    products.map((value) => (
                         <div key={value.id} className="App_Products_Box">
                             <h3>{value.name}</h3>
                             <br />

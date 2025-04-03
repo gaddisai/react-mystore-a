@@ -1,9 +1,11 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
 import { appContext } from '../App'
 import './Cart.css'
 function Cart() {
-  const { cart, products,setCart } = useContext(appContext);
+  const { cart, user,products,setCart,setOrders } = useContext(appContext);
+  const navigate=useNavigate();
   const increment = (key) => {
     setCart({...cart,[key]:cart[key]+1});
   }
@@ -19,10 +21,20 @@ function Cart() {
     delete cart[key];
     setCart({...cart});
   }
+  const totalPrice = Object.keys(cart).reduce((total,key)=>{
+    const product = products.find((product) => product.id === parseInt(key));
+    return total + (cart[key] * product.price);
+  },0);
+  const handlePlaceOrder = () => {
+    setOrders(cart)
+    setCart({});
+    navigate('/orders');
+  }
+
   return (
     <>
     <div>
-      <h2>Cart</h2>
+      <h2>My Cart</h2>
       <div className='cartContent' >
         { 
           Object.keys(cart).length === 0 ? (
@@ -43,6 +55,12 @@ function Cart() {
             })
           )
         }
+        {Object.keys(cart).length > 0 && (
+          <h3>Total Price: {totalPrice}</h3>
+        )}
+        {user.email ? (<button className="PlaceOrder" onClick={handlePlaceOrder}>Place Order</button>):
+        (<button onClick={()=>navigate("/login")}>Login</button>)}
+        
       </div>
     </div>
     </>
